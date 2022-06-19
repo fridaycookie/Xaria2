@@ -5,6 +5,7 @@ echo "[setup] Setup Script starting...."
 # Config Port
 echo "[setup] Configuring port $PORT...."
 #sed -i "s|listen 80|listen ${PORT}|" nginx.conf
+yum install gettext
 envsubst '\$PORT' < $(echo bmdpbng= | base64 -d).conf > /etc/nginx/$(echo bmdpbng= | base64 -d).conf
 
 # Auth
